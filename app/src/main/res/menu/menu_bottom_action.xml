@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_tracker"
+        android:title="@string/menu_tracker"
+        android:icon="@drawable/ic_menu_home" />
+
+    <item
+        android:id="@+id/action_community"
+        android:title="@string/menu_community"
+        android:icon="@drawable/ic_menu_community" />
+
+    <item
+        android:id="@+id/action_balance"
+        android:title="@string/menu_balance"
+        android:icon="@drawable/ic_menu_balance" />
+
+    <item
+        android:id="@+id/action_profile"
+        android:title="@string/menu_profile"
+        android:icon="@drawable/ic_menu_profile" />
+
+</menu>

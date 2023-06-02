@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Eco-Route</string>
+
+    <string name="menu_tracker">Tracker</string>
+    <string name="menu_community">Community</string>
+    <string name="menu_balance">Balance</string>
+    <string name="menu_profile">Profile</string>
+
+    <string name="start_running">Start Running</string>
+    <string name="stop_running">Stop Running</string>
+    <string name="start_point">Start Point</string>
+
 </resources>
