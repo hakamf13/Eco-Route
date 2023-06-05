@@ -4,6 +4,515 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailTrackerActivity">
+    tools:context=".DetailTrackerActivity"
+    android:background="@drawable/bg_login">
+
+    <!--Back Action-->
+    <TextView
+        android:id="@+id/backAction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back to home"
+        android:textSize="14sp"
+        android:textColor="@color/sage_light"
+        android:layout_marginTop="45dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guideline1"/>
+
+    <!--Trip Message-->
+    <TextView
+        android:id="@+id/tripLoaderTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Trip Loader"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="@color/sage_light"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/backAction"
+        app:layout_constraintStart_toEndOf="@+id/guideline1"/>
+
+    <TextView
+        android:id="@+id/tripMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="How much did you travel on this day?"
+        android:textColor="@color/sage_light"
+        android:textSize="14sp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintTop_toBottomOf="@+id/tripLoaderTitle"
+        app:layout_constraintStart_toEndOf="@+id/guideline1"/>
+
+    <!--Trip Tag-->
+    <TextView
+        android:id="@+id/tripTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Trip #13 Details"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/sage"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/guideline23"
+        app:layout_constraintStart_toEndOf="@+id/guideline1"
+        app:layout_constraintEnd_toStartOf="@id/guideline12"/>
+
+    <!--Trip Detail-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/groupDate"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/rounded_shape"
+        android:backgroundTint="@color/sage"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginEnd="42dp"
+        app:layout_constraintTop_toBottomOf="@+id/tripTag"
+        app:layout_constraintStart_toEndOf="@id/guideline1"
+        app:layout_constraintEnd_toStartOf="@+id/guideline12">
+
+        <TextView
+            android:id="@+id/tripDate"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:text="29 May 2023"
+            android:textSize="12sp"
+            android:textColor="@color/sage_light"
+            android:paddingTop="11dp"
+            android:paddingStart="22dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iconDate"/>
+
+        <ImageView
+            android:id="@+id/iconDate"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_date"
+            android:layout_marginStart="10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:tint="@color/sage_light" />
+
+        <ImageView
+            android:id="@+id/iconNext"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_next_24"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintTop_toTopOf="@+id/tripDate"
+            app:layout_constraintBottom_toBottomOf="@+id/tripDate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="@color/sage_light_50" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--Mileage-->
+    <ImageView
+        android:id="@+id/rectangleShape"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:background="@drawable/rounded_shape"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/groupDate"
+        app:layout_constraintStart_toStartOf="@+id/groupDate"/>
+
+    <ImageView
+        android:id="@+id/tripMileage"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_mileage"
+        app:layout_constraintStart_toStartOf="@+id/rectangleShape"
+        app:layout_constraintEnd_toEndOf="@+id/rectangleShape"
+        app:layout_constraintTop_toTopOf="@+id/rectangleShape"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangleShape"/>
+
+    <TextView
+        android:id="@+id/tripMileageTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:text="Mileage"
+        android:textSize="15sp"
+        android:textColor="@color/sage"
+        app:layout_constraintTop_toTopOf="@+id/tripMileage"
+        app:layout_constraintBottom_toBottomOf="@+id/tripMileage"
+        app:layout_constraintStart_toEndOf="@+id/tripMileage"/>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editTextInput_mileage"
+        android:layout_width="110dp"
+        android:layout_height="45dp"
+        android:background="@drawable/rounded_shape"
+        android:hint="9.7"
+        android:paddingStart="10dp"
+        android:paddingEnd="5dp"
+        android:textAlignment="textStart"
+        android:textColor="@color/sage"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tripMileage"
+        app:layout_constraintEnd_toEndOf="@+id/groupDate"
+        app:layout_constraintTop_toTopOf="@+id/tripMileage" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Km"
+        android:textColor="@color/sage_light_50"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintTop_toTopOf="@+id/rectangleShape"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangleShape"
+        app:layout_constraintEnd_toEndOf="@+id/editTextInput_mileage"/>
+
+    <!--Vehicle Detail-->
+    <TextView
+        android:id="@+id/detailVehicle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Details"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/sage"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/tripMileage"
+        app:layout_constraintStart_toStartOf="@id/rectangleShape"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/groupVehicle"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/rounded_shape"
+        android:backgroundTint="@color/sage_light"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginEnd="42dp"
+        app:layout_constraintTop_toBottomOf="@+id/detailVehicle"
+        app:layout_constraintStart_toEndOf="@id/guideline1"
+        app:layout_constraintEnd_toEndOf="@+id/groupDate">
+
+        <TextView
+            android:id="@+id/tripVehicleMessage"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:textSize="12sp"
+            android:textColor="@color/sage"
+            android:hint="Select vehicle from list"
+            android:textColorHint="@color/sage_50"
+            android:paddingTop="11dp"
+            android:paddingStart="22dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iconVehicle"/>
+
+        <ImageView
+            android:id="@+id/iconVehicle"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_vehicle"
+            android:layout_marginStart="10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:tint="@color/sage_50" />
+
+        <ImageView
+            android:id="@+id/iconListVehicle"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_next_24"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintTop_toTopOf="@+id/tripVehicleMessage"
+            app:layout_constraintBottom_toBottomOf="@+id/tripVehicleMessage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="@color/sage_50" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--Year-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/groupYear"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginEnd="42dp"
+        app:layout_constraintTop_toBottomOf="@+id/groupVehicle"
+        app:layout_constraintStart_toStartOf="@+id/groupVehicle"
+        app:layout_constraintEnd_toEndOf="@+id/groupVehicle">
+
+        <ImageView
+            android:id="@+id/rectangleShape2"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="@drawable/rounded_shape"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <ImageView
+            android:id="@+id/tripYear"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_year"
+            app:layout_constraintStart_toStartOf="@+id/rectangleShape2"
+            app:layout_constraintEnd_toEndOf="@+id/rectangleShape2"
+            app:layout_constraintTop_toTopOf="@+id/rectangleShape2"
+            app:layout_constraintBottom_toBottomOf="@+id/rectangleShape2"/>
+
+        <TextView
+            android:id="@+id/tripYearTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:text="Year"
+            android:textSize="15sp"
+            android:textColor="@color/sage"
+            app:layout_constraintTop_toTopOf="@+id/tripYear"
+            app:layout_constraintBottom_toBottomOf="@+id/tripYear"
+            app:layout_constraintStart_toEndOf="@+id/tripYear"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="2002"
+            android:textColor="@color/sage"
+            android:textSize="14sp"
+            android:textColorHint="@color/sage_50"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/iconListYear"/>
+
+        <ImageView
+            android:id="@+id/iconListYear"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_next_24"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="@color/sage_50" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--Fuel-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/groupFuel"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginEnd="42dp"
+        app:layout_constraintTop_toBottomOf="@+id/groupYear"
+        app:layout_constraintStart_toStartOf="@+id/groupVehicle"
+        app:layout_constraintEnd_toEndOf="@+id/groupVehicle">
+
+        <ImageView
+            android:id="@+id/rectangleShape3"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="@drawable/rounded_shape"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <ImageView
+            android:id="@+id/tripFuel"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_fuel"
+            app:layout_constraintStart_toStartOf="@+id/rectangleShape3"
+            app:layout_constraintEnd_toEndOf="@+id/rectangleShape3"
+            app:layout_constraintTop_toTopOf="@+id/rectangleShape3"
+            app:layout_constraintBottom_toBottomOf="@+id/rectangleShape3"/>
+
+        <TextView
+            android:id="@+id/tripFuelTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:text="Fuel"
+            android:textSize="15sp"
+            android:textColor="@color/sage"
+            app:layout_constraintTop_toTopOf="@+id/tripFuel"
+            app:layout_constraintBottom_toBottomOf="@+id/tripFuel"
+            app:layout_constraintStart_toEndOf="@+id/tripFuel"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Pertamax"
+            android:textSize="14sp"
+            android:textColor="@color/sage"
+            android:textColorHint="@color/sage_50"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/iconListFuel"/>
+
+        <ImageView
+            android:id="@+id/iconListFuel"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_next_24"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="@color/sage_50" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--Divider-->
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/line_divider"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginEnd="42dp"
+        app:layout_constraintTop_toBottomOf="@+id/groupFuel"
+        app:layout_constraintStart_toStartOf="@+id/groupFuel"
+        app:layout_constraintEnd_toEndOf="@id/groupFuel"/>
+
+    <!--CO2 Calculation-->
+    <TextView
+        android:id="@+id/carbonTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CO2 Emissions"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/sage_50"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/divider"
+        app:layout_constraintStart_toStartOf="@+id/divider"/>
+
+    <TextView
+        android:id="@+id/carbonValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.9"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/sage"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintTop_toTopOf="@+id/carbonTitle"
+        app:layout_constraintBottom_toBottomOf="@id/carbonTitle"
+        app:layout_constraintEnd_toStartOf="@+id/carbonUnit"/>
+
+    <TextView
+        android:id="@+id/carbonUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="g"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/sage"
+        app:layout_constraintTop_toTopOf="@+id/carbonTitle"
+        app:layout_constraintBottom_toBottomOf="@id/carbonTitle"
+        app:layout_constraintEnd_toEndOf="@+id/divider"/>
+
+    <TextView
+        android:id="@+id/pointTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Points"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/sage_50"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/carbonTitle"
+        app:layout_constraintStart_toStartOf="@+id/carbonTitle"/>
+
+    <TextView
+        android:id="@+id/pointValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/sage"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintTop_toTopOf="@+id/pointTitle"
+        app:layout_constraintBottom_toBottomOf="@id/pointTitle"
+        app:layout_constraintEnd_toStartOf="@+id/pointUnit"/>
+
+    <TextView
+        android:id="@+id/pointUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="pts"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/sage"
+        app:layout_constraintTop_toTopOf="@+id/pointTitle"
+        app:layout_constraintBottom_toBottomOf="@id/pointTitle"
+        app:layout_constraintEnd_toEndOf="@+id/divider"/>
+
+    <!--Button-->
+    <Button
+        android:id="@+id/button_cancel"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/peach"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintEnd_toStartOf="@+id/button_save"/>
+
+    <Button
+        android:id="@+id/button_save"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:textColor="@color/sage"
+        android:backgroundTint="@color/white"
+        app:layout_constraintTop_toTopOf="@+id/button_cancel"
+        app:layout_constraintBottom_toBottomOf="@id/button_cancel"
+        app:layout_constraintStart_toEndOf="@+id/button_cancel"
+        app:layout_constraintEnd_toEndOf="@+id/guideline12"/>
+
+    <!-- Guideline -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.10" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.90" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.20" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.23" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

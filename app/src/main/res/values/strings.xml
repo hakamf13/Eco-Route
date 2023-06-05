@@ -9,5 +9,7 @@
     <string name="start_running">Start Running</string>
     <string name="stop_running">Stop Running</string>
     <string name="start_point">Start Point</string>
+    <string name="alert_wrong_email">Wrong email!\n</string>
+    <string name="error_password">Min. 8 characters</string>
 
 </resources>

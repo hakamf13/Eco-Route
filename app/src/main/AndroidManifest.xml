@@ -17,26 +17,40 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EcoRoute"
         tools:targetApi="31">
-        <activity
-            android:name=".DetailTrackerActivity"
-            android:exported="false" />
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyD4YTDa1qtjqzUbgmqdEpY5wHeG_W8aeHQ" />
 
         <activity
-            android:name=".TrackerActivity"
+            android:name=".HomepageActivity"
             android:exported="true">
+
+
+        </activity>
+        <activity
+            android:name=".DetailTrackerActivity"
+            android:exported="true" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <activity
+            android:name=".TrackerActivity"
+            android:exported="true">
+
+
+
+        </activity>
         <activity
             android:name=".RegisterActivity"
-            android:exported="false" />
+            android:exported="true">
+
+        </activity>
         <activity
             android:name=".LoginActivity"
             android:exported="false" />

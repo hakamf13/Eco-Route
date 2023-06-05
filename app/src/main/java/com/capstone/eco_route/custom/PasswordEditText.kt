@@ -4,8 +4,10 @@ import android.content.Context
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.AttributeSet
+import android.view.MotionEvent
 import android.view.View
 import androidx.appcompat.widget.AppCompatEditText
+import com.capstone.eco_route.R
 
 class PasswordEditText: AppCompatEditText, View.OnTouchListener {
     constructor(context: Context)
@@ -41,5 +43,9 @@ class PasswordEditText: AppCompatEditText, View.OnTouchListener {
             }
 
         })
+    }
+
+    override fun onTouch(v: View?, event: MotionEvent?): Boolean {
+        TODO("Not yet implemented")
     }
 }
