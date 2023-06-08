@@ -19,7 +19,7 @@
         android:id="@+id/textView_dateCurrent"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="15 June 2023"
+        android:text="16 June 2023"
         android:textStyle="bold"
         android:textColor="@color/sage_light_50"
         android:textSize="12sp"
