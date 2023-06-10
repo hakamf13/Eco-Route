@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_splash"
-    tools:context=".HomepageActivity">
+    tools:context=".ui.homepage.HomepageActivity">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/civ_profileImage"
@@ -42,6 +42,16 @@
         app:layout_constraintTop_toBottomOf="@+id/textView_dateCurrent"
         app:layout_constraintBottom_toBottomOf="@+id/civ_profileImage"
         app:layout_constraintStart_toEndOf="@+id/civ_profileImage"/>
+
+    <Button
+        android:id="@+id/logout_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/peach"
+        android:text="Logout"
+        app:layout_constraintTop_toTopOf="@id/civ_profileImage"
+        app:layout_constraintBottom_toBottomOf="@id/civ_profileImage"
+        app:layout_constraintEnd_toEndOf="@id/guideline12"/>
 
     <TextView
         android:id="@+id/totalSpending"

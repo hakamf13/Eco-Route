@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "847823145241",
+    "project_id": "eco-route-1107b",
+    "storage_bucket": "eco-route-1107b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:847823145241:android:141d450c9bcb3df1631d88",
+        "android_client_info": {
+          "package_name": "com.capstone.eco_route"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "847823145241-svp2uuc5i9oojkd96ukq59opuolkh4ju.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.capstone.eco_route",
+            "certificate_hash": "80a0136b84ede5a1079600b58847877198a6baa6"
+          }
+        },
+        {
+          "client_id": "847823145241-iaqa6m2ou0hric86g7742h4stmlt5mh0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBV7Z1DDy4wdCdDfQMgrEwnxxPzYOVqto"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "847823145241-bljkhnhnu5dvbfg3dt992fkeentt4p5a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

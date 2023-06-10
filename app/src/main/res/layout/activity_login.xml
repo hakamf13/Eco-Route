@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
+    tools:context=".ui.login.LoginActivity"
     android:background="@drawable/bg_login">
 
     <ImageView
@@ -44,7 +44,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/editTextInput_email"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_marginTop="5dp"
         android:elevation="10dp"
@@ -78,7 +78,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/editTextInput_password"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_marginTop="5dp"
         app:layout_constraintTop_toBottomOf="@+id/title_password"
@@ -86,7 +86,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline12"
         app:startIconDrawable="@drawable/baseline_lock_24">
 
-        <com.capstone.eco_route.custom.EmailEditText
+        <com.capstone.eco_route.custom.PasswordEditText
             android:id="@+id/custom_password"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -98,14 +98,25 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Login"
+        app:layout_constraintTop_toBottomOf="@+id/editTextInput_password"
+        app:layout_constraintBottom_toTopOf="@+id/forgotPasswordLink"
+        app:layout_constraintStart_toStartOf="@id/editTextInput_password"
+        app:layout_constraintEnd_toEndOf="@id/editTextInput_password"/>
+
     <!-- Forgot Password Link -->
     <TextView
         android:id="@+id/forgotPasswordLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Forgot a password?"
-        android:layout_marginTop="25dp"
-        app:layout_constraintTop_toBottomOf="@+id/editTextInput_password"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/login_button"
         app:layout_constraintEnd_toStartOf="@+id/guideline12"/>
 
     <!-- Divider -->
@@ -153,7 +164,7 @@
 
     <!-- Register Link -->
     <TextView
-        android:id="@+id/registerLink"
+        android:id="@+id/loginLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Don't have an account? Register here!"

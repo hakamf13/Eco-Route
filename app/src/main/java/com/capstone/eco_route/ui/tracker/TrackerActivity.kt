@@ -1,4 +1,4 @@
-package com.capstone.eco_route
+package com.capstone.eco_route.ui.tracker
 
 import android.Manifest
 import android.content.IntentSender
@@ -14,6 +14,7 @@ import androidx.activity.result.IntentSenderRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.capstone.eco_route.R
 import com.capstone.eco_route.databinding.ActivityTrackerBinding
 import com.google.android.gms.common.api.ResolvableApiException
 import com.google.android.gms.location.FusedLocationProviderClient

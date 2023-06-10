@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TrackerActivity"
+    tools:context=".ui.tracker.TrackerActivity"
     android:background="@drawable/bg_track">
 
     <fragment
@@ -16,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/guideline2"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:context=".TrackerActivity" />
+        tools:context=".ui.tracker.TrackerActivity" />
 
     <!--Back Action-->
     <TextView

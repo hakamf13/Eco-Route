@@ -1,9 +1,11 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-//    id 'kotlin-kapt'
     id 'kotlin-parcelize'
     id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+    id 'com.google.gms.google-services'
+    id 'kotlin-kapt'
+    id("com.google.dagger.hilt.android") version "2.44" apply false
 }
 
 android {
@@ -31,7 +33,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 
     viewBinding {
@@ -51,14 +53,35 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
 
     implementation 'androidx.activity:activity-ktx:1.7.2'
+    implementation 'androidx.fragment:fragment-ktx:1.6.0'
 
-//    network
+    implementation "androidx.navigation:navigation-fragment-ktx:2.6.0"
+    implementation "androidx.navigation:navigation-ui-ktx:2.6.0"
+
+    /* Room */
+    implementation 'androidx.room:room-ktx:2.5.1'
+    testImplementation 'junit:junit:4.13.2'
+    kapt 'androidx.room:room-compiler:2.5.1'
+
+    implementation 'androidx.datastore:datastore-preferences:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.1'
+
+    implementation 'androidx.paging:paging-runtime-ktx:3.1.1'
+    implementation 'androidx.room:room-paging:2.5.1'
+
+    /* Network */
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.7'
 
-//    utility
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.4'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+
+    /* Utility */
     implementation 'com.github.bumptech.glide:glide:4.15.1'
+    kapt 'com.github.bumptech.glide:compiler:4.11.0'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
@@ -71,8 +94,39 @@ dependencies {
 
     implementation 'com.mikhaellopez:circularprogressbar:3.1.0'
 
-//    testing
+    implementation("com.google.dagger:hilt-android:2.44")
+    kapt("com.google.dagger:hilt-android-compiler:2.44")
+
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
+    kapt "androidx.hilt:hilt-compiler:1.0.0"
+
+//    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    // Dagger Core
+    implementation "com.google.dagger:dagger:2.28.3"
+    kapt "com.google.dagger:dagger-compiler:2.25.2"
+
+    // Dagger Android
+    api 'com.google.dagger:dagger-android:2.23.2'
+    api 'com.google.dagger:dagger-android-support:2.23.2'
+    kapt 'com.google.dagger:dagger-android-processor:2.23.2'
+
+    /* Firebase */
+    implementation 'com.google.android.gms:play-services-auth:20.5.0'
+    implementation 'com.google.firebase:firebase-auth-ktx:22.0.0'
+    implementation 'com.google.firebase:firebase-storage-ktx:20.2.0'
+    implementation 'com.google.firebase:firebase-database:20.2.2'
+    implementation 'com.firebaseui:firebase-ui-auth:8.0.2'
+//    implementation 'com.firebaseui:firebase-ui-database:8.0.2'
+//    implementation 'com.firebaseui:firebase-ui-firestore:8.0.2'
+//    implementation 'com.firebaseui:firebase-ui-storage:8.0.2'
+
+    /* Testing */
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}
+
+kapt {
+    correctErrorTypes = true
 }
