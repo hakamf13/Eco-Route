@@ -2,13 +2,7 @@
     <string name="app_name">Eco-Route</string>
 
     <!--Firebase-->
-    <string name="default_web_client_id" translatable="false">847823145241-svp2uuc5i9oojkd96ukq59opuolkh4ju.apps.googleusercontent.com</string>
-    <string name="gcm_defaultSenderId" translatable="false">179397239922</string>
-    <string name="google_api_key" translatable="false">AIzaSyAcO7qTGWND_jL4qBDF-bEGzhq9_1F_c-8</string>
-    <string name="google_app_id" translatable="false">1:179397239922:android:1a62336dcf40b99eeb0eeb</string>
-    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAcO7qTGWND_jL4qBDF-bEGzhq9_1F_c-8</string>
-    <string name="google_storage_bucket" translatable="false">my-firebase-chat-94518.appspot.com</string>
-    <string name="project_id" translatable="false">my-firebase-chat-94518</string>
+    <string name="default_web_clients_id" translatable="false">847823145241-iaqa6m2ou0hric86g7742h4stmlt5mh0.apps.googleusercontent.com</string>
 
     <string name="menu_tracker">Tracker</string>
     <string name="menu_community">Community</string>

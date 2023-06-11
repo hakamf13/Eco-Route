@@ -15,6 +15,6 @@ data class Track(
 ) {
 
     @PrimaryKey(autoGenerate = true)
-    var userId: Int? = null
+    var id: Int? = null
 
 }

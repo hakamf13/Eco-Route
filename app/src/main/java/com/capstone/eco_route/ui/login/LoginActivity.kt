@@ -3,11 +3,11 @@ package com.capstone.eco_route.ui.login
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import com.capstone.eco_route.R
 import com.capstone.eco_route.databinding.ActivityLoginBinding
 import com.capstone.eco_route.ui.homepage.HomepageActivity
@@ -45,7 +45,7 @@ class LoginActivity : AppCompatActivity() {
 
         val gso = GoogleSignInOptions
             .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestIdToken(getString(R.string.default_web_clients_id))
             .requestEmail()
             .build()
 
@@ -74,7 +74,7 @@ class LoginActivity : AppCompatActivity() {
         if (userEmail.isNotEmpty() && userPassword.isNotEmpty()) {
             CoroutineScope(Dispatchers.IO).launch {
                 try {
-                    authentication.createUserWithEmailAndPassword(userEmail, userPassword).await()
+                    authentication.signInWithEmailAndPassword(userEmail, userPassword).await()
                     withContext(Dispatchers.Main) {
                         logStateValidate(currentUser = null)
                     }
@@ -111,7 +111,7 @@ class LoginActivity : AppCompatActivity() {
         if (result.resultCode == Activity.RESULT_OK) {
             val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
             try {
-                val userAccount = task.getResult(ApiException::class.java)!!
+                val userAccount = task.getResult(ApiException::class.java)
                 Log.d(TAG, "userAuthentication: " + userAccount.id)
                 userAuthWithGoogle(userAccount.idToken!!)
             } catch (e: ApiException) {

@@ -16,7 +16,22 @@ interface TrackDao {
     @Delete
     suspend fun deleteTrack(track: Track)
 
-    @Query("""
+    @Query("SELECT * FROM track_table ORDER BY timeStamp DESC")
+    fun getAllTrackerSortedByDate(): LiveData<List<Track>>
+
+    @Query("SELECT * FROM track_table ORDER BY timeInMills DESC")
+    fun getAllTrackerSortedByTimeInMills(): LiveData<List<Track>>
+
+    @Query("SELECT * FROM track_table ORDER BY emissionsReduced DESC")
+    fun getAllTrackerSortedByEmissionsReduced(): LiveData<List<Track>>
+
+    @Query("SELECT * FROM track_table ORDER BY averageSpeed DESC")
+    fun getAllTrackerSortedByAverageSpeed(): LiveData<List<Track>>
+
+    @Query("SELECT * FROM track_table ORDER BY mileageInMeters DESC")
+    fun getAllTrackerSortedByMileageInMeters(): LiveData<List<Track>>
+
+    /*@Query("""
         SELECT * FROM track_table
         ORDER BY
         CASE WHEN :column = 'timeStamp' THEN timeStamp END DESC,
@@ -25,7 +40,7 @@ interface TrackDao {
         CASE WHEN :column = 'averageSpeed' THEN averageSpeed END DESC,
         CASE WHEN :column = 'mileageInMeters' THEN mileageInMeters END DESC
     """)
-    suspend fun filterBy(column: String): LiveData<List<Track>>
+    fun filterBy(column: String): LiveData<List<Track>>*/
 
     @Query("SELECT SUM(timeInMills) FROM track_table")
     fun getTotalTimeInMills(): LiveData<Long>
@@ -34,7 +49,7 @@ interface TrackDao {
     fun getTotalEmissionsReduced(): LiveData<Long>
 
     @Query("SELECT SUM(mileageInMeters) FROM track_table")
-    fun getTotalMileageInMeres(): LiveData<Long>
+    fun getTotalMileageInMeters(): LiveData<Long>
 
     @Query("SELECT AVG(averageSpeed) FROM track_table")
     fun getTotalAverageSpeed(): LiveData<Float>

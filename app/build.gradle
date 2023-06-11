@@ -5,7 +5,8 @@ plugins {
     id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
     id 'com.google.gms.google-services'
     id 'kotlin-kapt'
-    id("com.google.dagger.hilt.android") version "2.44" apply false
+    id 'com.google.dagger.hilt.android'
+//    id("com.google.dagger.hilt.android") version "2.44" apply false
 }
 
 android {
@@ -33,22 +34,20 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        jvmTarget = '1.8'
     }
 
     viewBinding {
         enabled true
     }
-    buildFeatures {
-        viewBinding true
-    }
+
 }
 
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.cardview:cardview:1.0.0'
 
@@ -75,17 +74,17 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.7'
 
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.4'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1'
 
     /* Utility */
     implementation 'com.github.bumptech.glide:glide:4.15.1'
-    kapt 'com.github.bumptech.glide:compiler:4.11.0'
+    kapt 'com.github.bumptech.glide:compiler:4.15.1'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
-    implementation 'com.airbnb.android:lottie:5.2.0'
+    implementation 'com.airbnb.android:lottie:6.0.1'
 
     implementation 'com.klinkerapps:link_builder:2.0.5'
 
@@ -94,22 +93,31 @@ dependencies {
 
     implementation 'com.mikhaellopez:circularprogressbar:3.1.0'
 
-    implementation("com.google.dagger:hilt-android:2.44")
-    kapt("com.google.dagger:hilt-android-compiler:2.44")
+    implementation 'com.google.dagger:hilt-android:2.46.1'
+    annotationProcessor 'com.google.dagger:hilt-android-compiler:2.46.1'
 
     implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
     kapt "androidx.hilt:hilt-compiler:1.0.0"
 
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
+
 //    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
     // Dagger Core
-    implementation "com.google.dagger:dagger:2.28.3"
-    kapt "com.google.dagger:dagger-compiler:2.25.2"
+    implementation 'com.google.dagger:dagger:2.46.1'
+    kapt 'com.google.dagger:dagger-compiler:2.46.1'
 
-    // Dagger Android
-    api 'com.google.dagger:dagger-android:2.23.2'
-    api 'com.google.dagger:dagger-android-support:2.23.2'
-    kapt 'com.google.dagger:dagger-android-processor:2.23.2'
+    /*// Dagger Android
+    api 'com.google.dagger:dagger-android:2.46.1'
+    api 'com.google.dagger:dagger-android-support:2.46.1'
+    kapt 'com.google.dagger:dagger-android-processor:2.46.1'*/
+
+    // Easy Permissions
+    implementation 'pub.devrel:easypermissions:3.0.0'
+
+    // Timber
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
 
     /* Firebase */
     implementation 'com.google.android.gms:play-services-auth:20.5.0'
@@ -125,6 +133,7 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
 }
 
 kapt {
