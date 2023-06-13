@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.tracker.TrackerActivity"
-    android:background="@drawable/bg_track">
+    android:background="@drawable/bg_track"
+    android:id="@+id/trackerLayout">
 
     <fragment
         android:id="@+id/maps"
@@ -39,9 +40,10 @@
         android:textSize="25sp"
         android:textStyle="bold"
         android:textColor="@color/sage_light"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         app:layout_constraintTop_toBottomOf="@+id/backAction"
-        app:layout_constraintStart_toEndOf="@+id/guideline1"/>
+        app:layout_constraintStart_toEndOf="@+id/guideline1"
+        app:layout_constraintEnd_toStartOf="@id/guideline12"/>
 
     <TextView
         android:id="@+id/tripMessage"
@@ -52,7 +54,8 @@
         android:textSize="14sp"
         android:layout_marginTop="2dp"
         app:layout_constraintTop_toBottomOf="@+id/tripTitle"
-        app:layout_constraintStart_toEndOf="@+id/guideline1"/>
+        app:layout_constraintStart_toEndOf="@+id/guideline1"
+        app:layout_constraintEnd_toStartOf="@id/guideline12"/>
 
     <!--Trip Count-->
     <TextView
@@ -63,10 +66,11 @@
         android:textStyle="bold"
         android:textColor="@color/sage_light_50"
         android:textSize="15sp"
-        android:layout_marginBottom="35dp"
+        android:layout_marginTop="15dp"
         app:layout_constraintTop_toBottomOf="@+id/tripMessage"
-        app:layout_constraintBottom_toTopOf="@id/guideline2"
-        app:layout_constraintStart_toEndOf="@+id/guideline1"/>
+        app:layout_constraintBottom_toTopOf="@id/tripTimeValue"
+        app:layout_constraintStart_toEndOf="@+id/guideline1"
+        app:layout_constraintEnd_toStartOf="@+id/guideline12"/>
 
     <TextView
         android:id="@+id/tripTimeValue"
@@ -79,32 +83,8 @@
         android:layout_marginBottom="15dp"
         app:layout_constraintTop_toBottomOf="@+id/tripTimeTitle"
         app:layout_constraintBottom_toTopOf="@id/guideline2"
-        app:layout_constraintStart_toEndOf="@+id/guideline1"/>
-
-    <TextView
-        android:id="@+id/tripMileageTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mileage"
-        android:textSize="15sp"
-        android:textColor="@color/sage_light_50"
-        android:textStyle="bold"
-        android:layout_marginStart="15dp"
-        app:layout_constraintTop_toTopOf="@+id/tripTimeTitle"
-        app:layout_constraintStart_toEndOf="@+id/guideline13"/>
-
-    <TextView
-        android:id="@+id/tripMileageValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0.0 m"
-        android:textStyle="bold"
-        android:textColor="@color/sage_light"
-        android:textSize="30sp"
-        android:layout_marginStart="15dp"
-        app:layout_constraintTop_toTopOf="@id/tripTimeValue"
-        app:layout_constraintBottom_toBottomOf="@+id/tripTimeValue"
-        app:layout_constraintStart_toEndOf="@+id/guideline13"/>
+        app:layout_constraintStart_toEndOf="@+id/guideline1"
+        app:layout_constraintEnd_toStartOf="@id/guideline12"/>
 
     <Button
         android:id="@+id/button_startTrack"

@@ -73,9 +73,10 @@
 
         <TextView
             android:id="@+id/tripDate"
-            android:layout_width="0dp"
+            android:layout_width="170dp"
             android:layout_height="40dp"
-            android:text="29 May 2023"
+            android:hint="29 May 2023"
+            android:textColorHint="@color/sage_light_50"
             android:textSize="12sp"
             android:textColor="@color/sage_light"
             android:paddingTop="11dp"
@@ -146,6 +147,7 @@
         android:layout_height="45dp"
         android:background="@drawable/rounded_shape"
         android:hint="0.0"
+        android:textColorHint="@color/sage_light_50"
         android:paddingStart="10dp"
         android:paddingEnd="5dp"
         android:textAlignment="textStart"
@@ -274,6 +276,7 @@
             app:layout_constraintStart_toEndOf="@+id/tripYear"/>
 
         <TextView
+            android:id="@+id/tripYearValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="2002"

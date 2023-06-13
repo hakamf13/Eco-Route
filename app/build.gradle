@@ -59,6 +59,7 @@ dependencies {
 
     /* Room */
     implementation 'androidx.room:room-ktx:2.5.1'
+    implementation 'com.google.firebase:firebase-database-ktx:20.1.0'
     testImplementation 'junit:junit:4.13.2'
     kapt 'androidx.room:room-compiler:2.5.1'
 
@@ -101,6 +102,8 @@ dependencies {
 
     implementation 'android.arch.lifecycle:extensions:1.1.1'
 
+    implementation 'io.github.dzmitry-lakisau:month-year-picker-dialog:1.0.0'
+
 //    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
     // Dagger Core
@@ -120,14 +123,17 @@ dependencies {
 
 
     /* Firebase */
+    implementation platform('com.google.firebase:firebase-bom:31.5.0')
     implementation 'com.google.android.gms:play-services-auth:20.5.0'
     implementation 'com.google.firebase:firebase-auth-ktx:22.0.0'
+
     implementation 'com.google.firebase:firebase-storage-ktx:20.2.0'
     implementation 'com.google.firebase:firebase-database:20.2.2'
-    implementation 'com.firebaseui:firebase-ui-auth:8.0.2'
+//    implementation 'com.firebaseui:firebase-ui-auth:8.0.2'
 //    implementation 'com.firebaseui:firebase-ui-database:8.0.2'
 //    implementation 'com.firebaseui:firebase-ui-firestore:8.0.2'
 //    implementation 'com.firebaseui:firebase-ui-storage:8.0.2'
+    
 
     /* Testing */
     testImplementation 'junit:junit:4.13.2'
