@@ -1,5 +1,6 @@
 package com.capstone.eco_route.ui.detailtracker
 
+import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.app.Dialog
 import android.content.Intent
@@ -16,7 +17,7 @@ import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
 
-@Suppress("DEPRECATION", "UNUSED_EXPRESSION")
+@Suppress("DEPRECATION")
 class DetailTrackerActivity : AppCompatActivity() {
 
     private val binding: ActivityDetailTrackerBinding by lazy {
@@ -56,6 +57,10 @@ class DetailTrackerActivity : AppCompatActivity() {
 
         binding.buttonCancel.setOnClickListener {
             showCancelCalculateDialog()
+        }
+
+        binding.buttonEndResult.setOnClickListener {
+            //
         }
 
     }
@@ -139,6 +144,7 @@ class DetailTrackerActivity : AppCompatActivity() {
         showDialog(DATE_DIALOG_ID)
     }
 
+    @SuppressLint("LogNotTimber")
     private fun yearDialogBuilder(): DatePickerDialog {
         val datePickerDialog = DatePickerDialog(
             this,
