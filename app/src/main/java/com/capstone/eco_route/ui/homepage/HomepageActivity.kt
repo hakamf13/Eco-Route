@@ -60,12 +60,6 @@ class HomepageActivity : AppCompatActivity() {
                 show()
 
             }
-
-            val intent = Intent(
-                this@HomepageActivity,
-                TrackerActivity::class.java
-            )
-            startActivity(intent)
         }
     }
 
