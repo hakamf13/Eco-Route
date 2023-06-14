@@ -9,8 +9,4 @@ import com.capstone.eco_route.datasource.db.repository.TrackerRepository
 @Suppress("DEPRECATION")
 class TrackerViewModel @ViewModelInject constructor(
     val trackerRepository: TrackerRepository
-): ViewModel() {
-
-
-
-}
+): ViewModel()

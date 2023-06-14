@@ -159,14 +159,14 @@
         app:layout_constraintTop_toTopOf="@+id/tripMileage" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="m"
-        android:textColor="@color/sage_light_50"
+        android:layout_width="30dp"
+        android:layout_height="16dp"
         android:layout_marginEnd="10dp"
-        app:layout_constraintTop_toTopOf="@+id/rectangleShape"
+        android:text="Km"
+        android:textColor="@color/sage_light_50"
         app:layout_constraintBottom_toBottomOf="@+id/rectangleShape"
-        app:layout_constraintEnd_toEndOf="@+id/editTextInput_mileage"/>
+        app:layout_constraintEnd_toEndOf="@+id/editTextInput_mileage"
+        app:layout_constraintTop_toTopOf="@+id/rectangleShape" />
 
     <!--Vehicle Detail-->
     <TextView

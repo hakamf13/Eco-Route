@@ -53,18 +53,6 @@
         app:layout_constraintBottom_toBottomOf="@id/civ_profileImage"
         app:layout_constraintEnd_toEndOf="@id/guideline12"/>
 
-    <TextView
-        android:id="@+id/totalSpending"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Total Spending CO2"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:textColor="@color/sage_light"
-        app:layout_constraintBottom_toTopOf="@id/guideline2"
-        app:layout_constraintStart_toEndOf="@+id/guideline1"
-        app:layout_constraintEnd_toStartOf="@+id/guideline12"/>
-
     <com.google.android.material.progressindicator.CircularProgressIndicator
         android:layout_width="400dp"
         android:layout_height="400dp"
@@ -74,13 +62,15 @@
 
     <ImageView
         android:id="@+id/dummyProgressBar"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:src="@drawable/circular_progress"
-        app:layout_constraintTop_toBottomOf="@+id/guideline2"
         app:layout_constraintBottom_toTopOf="@+id/guideline22"
+        app:layout_constraintEnd_toStartOf="@+id/guideline12"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toEndOf="@+id/guideline1"
-        app:layout_constraintEnd_toStartOf="@+id/guideline12" />
+        app:layout_constraintTop_toBottomOf="@+id/guideline2"
+        app:layout_constraintVertical_bias="0.526" />
 
     <Button
         android:id="@+id/button_calculate"

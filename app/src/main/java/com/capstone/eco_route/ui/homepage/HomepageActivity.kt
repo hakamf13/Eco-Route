@@ -4,10 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.capstone.eco_route.R
 import com.capstone.eco_route.databinding.ActivityHomepageBinding
 import com.capstone.eco_route.datasource.db.other.ContantsToken.SHOW_ACTION_TRACKER_ACTIVITY
+import com.capstone.eco_route.ui.detailtracker.DetailTrackerActivity
 import com.capstone.eco_route.ui.login.LoginActivity
 import com.capstone.eco_route.ui.tracker.TrackerActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -34,6 +36,31 @@ class HomepageActivity : AppCompatActivity() {
         }
 
         binding.buttonCalculate.setOnClickListener {
+            AlertDialog.Builder(
+                this@HomepageActivity
+            ).apply {
+                setTitle("Calculate Option")
+                setMessage("Are you want to calculate manual?")
+
+                setPositiveButton("Yes") { _, _ ->
+                    val intent = Intent(
+                        this@HomepageActivity,
+                        DetailTrackerActivity::class.java
+                    )
+                    startActivity(intent)
+                }
+                setNegativeButton("No") { _, _ ->
+                    val intent = Intent(
+                        this@HomepageActivity,
+                        TrackerActivity::class.java
+                    )
+                    startActivity(intent)
+                }
+                create()
+                show()
+
+            }
+
             val intent = Intent(
                 this@HomepageActivity,
                 TrackerActivity::class.java

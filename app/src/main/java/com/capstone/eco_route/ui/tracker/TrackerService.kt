@@ -173,7 +173,7 @@ class TrackerService: LifecycleService() {
         override fun onLocationResult(locationResult: LocationResult) {
             super.onLocationResult(locationResult)
             if (isTracking.value!!) {
-                locationResult?.locations?.let { locations ->
+                locationResult.locations.let { locations ->
                     for (location in locationResult.locations) {
                         createTrackPathPoints(location)
                         /*Timber.d("Update Location: ${location.latitude}, ${location.longitude}")*/
