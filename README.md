@@ -8,6 +8,6 @@ Team Members:
 5. Niken Larasati - Machine Learning (M282DKY3782)
 
 All Materials for Apps Development
--
--
--
+- Google Colab
+- Figma
+
