@@ -10,4 +10,6 @@ Team Members:
 All Materials for Apps Development
 - Google Colab
 - Figma
+- Android Studio
+- Google Firebase
 
